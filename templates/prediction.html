@@ -1,0 +1,45 @@
+<head>
+    <meta charset="UTF-8">
+    <title>Reconnaissance de signe</title>
+</head>
+{% block content %}
+<link rel="stylesheet" href="{{ url_for('static', filename='prediction.css') }}">
+
+<div class="back-menu">
+    <a href="{{ url_for('home') }}">
+        <button>🏠 Retour au menu</button>
+    </a>
+</div>
+
+<div class="predict-container">
+    <h2>🖐️ Reconnaissance de signe</h2>
+    <p>Importez une image représentant un signe pour connaître sa signification en langue des signes.</p>
+
+    <form method="POST" enctype="multipart/form-data" class="predict-form">
+        <input type="file" name="image" accept="image/*" required onchange="previewImage(event)">
+        <button type="submit">🔍 Prédire le signe</button>
+    </form>
+
+    <div id="preview-container" style="display: none; margin-top: 20px;">
+        <p style="font-weight: bold;">Aperçu de l’image sélectionnée</p>
+        <img id="preview" class="preview-image" src="#" alt="Aperçu du signe">
+    </div>
+</div>
+
+<script>
+  function previewImage(event) {
+    const input = event.target;
+    const preview = document.getElementById('preview');
+    const container = document.getElementById('preview-container');
+
+    if (input.files && input.files[0]) {
+      const reader = new FileReader();
+      reader.onload = function(e) {
+        preview.src = e.target.result;
+        container.style.display = 'block';
+      }
+      reader.readAsDataURL(input.files[0]);
+    }
+  }
+</script>
+{% endblock %}

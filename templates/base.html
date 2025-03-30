@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}SignDetect{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+{% set hide_topbar_routes = ['index', 'login', 'register'] %}
+{% if request.endpoint not in hide_topbar_routes and session.get('user') %}
+  <div class="top-bar">
+    <div class="top-left">
+        👋 Bonjour, {{ session['user'] }}
+    </div>
+    <div class="top-right">
+        <a href="{{ url_for('logout') }}" class="logout-btn">🔓 Déconnexion</a>
+    </div>
+  </div>
+{% endif %}
+
+<div class="container" id="app">
+  {% block content %}{% endblock %}
+</div>
+
+</body>
+</html>

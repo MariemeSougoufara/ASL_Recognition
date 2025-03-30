@@ -1,0 +1,132 @@
+{% block content %}
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}SignDetect{% endblock %}</title>
+</head>
+
+<style>
+  .welcome-wrapper {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 50px 20px;
+  }
+
+  .welcome {
+      background-color: white;
+      padding: 60px 50px;
+      border-radius: 26px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+      max-width: 800px;
+      width: 100%;
+      text-align: center;
+      font-family: 'Segoe UI', Tahoma, sans-serif;
+  }
+
+  .logo-big {
+      width: 100px;
+      margin-bottom: 15px;
+  }
+
+  .welcome h1 {
+      font-size: 32px;
+      margin-bottom: 15px;
+      font-weight: bold;
+  }
+
+  .highlight {
+      color: #2c97de;
+  }
+
+  .subtitle {
+      font-size: 20px;
+      color: #232323;
+      margin: 12px 0;
+  }
+
+  .quote {
+      font-size: 18px;
+      color: #232323;
+      margin: 12px 0;
+      font-style: italic;
+  }
+
+  .slogan {
+      font-size: 20px;
+      margin: 18px 0;
+      font-weight: 600;
+  }
+
+  .small-print {
+      font-size: 16px;
+      color: #232323;
+      line-height: 1.6;
+      margin-bottom: 30px;
+  }
+
+  .welcome-buttons {
+      display: flex;
+      gap: 20px;
+      justify-content: center;
+      flex-wrap: wrap;
+  }
+
+  .welcome-buttons a button {
+      padding: 14px 30px;
+      font-size: 17px;
+      border: none;
+      border-radius: 10px;
+      background-color: #2c97de;
+      color: white;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+  }
+
+  .welcome-buttons a {
+    text-decoration: none;
+}
+
+  .welcome-buttons a button:hover {
+      background-color: #1b6fa8;
+      transform: scale(1.04);
+  }
+</style>
+
+<div class="welcome-wrapper">
+  <div class="welcome">
+      <img src="{{ url_for('static', filename='help.png') }}" alt="Logo" class="logo-big">
+
+      <h1 style="display: flex; justify-content: center; align-items: center; gap: 10px;">
+        Bienvenue sur <span class="highlight">SignDetect</span>
+      </h1>
+
+      <p class="subtitle">Là où la technologie rencontre l'inclusion !</p>
+
+      <blockquote class="quote">
+          “Parce que communiquer est un droit, pas un privilège.”
+      </blockquote>
+
+      <p class="slogan">
+          <strong>Notre mission : rendre le langage des signes compréhensible par tous.</strong>
+      </p>
+
+      <p class="small-print">
+          Plus qu'une plateforme, un pas vers l'équité numérique.<br>
+          Ici, <strong>la discrimination n’a pas sa place</strong>. Chaque geste compte.
+      </p>
+
+      <div class="welcome-buttons">
+          <a href="{{ url_for('login') }}">
+              <button>Se connecter</button>
+          </a>
+          <a href="{{ url_for('register') }}">
+              <button>S'inscrire</button>
+          </a>
+      </div>
+  </div>
+</div>
+
+{% endblock %}

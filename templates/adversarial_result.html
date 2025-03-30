@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Résultat de l’attaque adversariale</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='adversarial.css') }}">
+</head>
+<body>
+
+<div class="attack-container">
+    <h2>⚔️ Résultat de l’attaque adversariale</h2>
+    <p>Comparaison entre l'image originale et l'image adversariale générée par le modèle IA.</p>
+
+    <div class="attack-results">
+        <div class="attack-block">
+            <h3>🖼️ Image originale</h3>
+            <img src="{{ original_image }}" alt="Image originale" class="preview-image">
+            <p>Prédiction : <strong>{{ original_prediction }}</strong><br>
+               Confiance : {{ original_confidence }}%</p>
+        </div>
+
+        <div class="attack-block">
+            <h3>⚠️ Image adversariale</h3>
+            <img src="{{ adversarial_image }}" alt="Image adversariale" class="preview-image">
+            <p>Prédiction : <strong>{{ adversarial_prediction }}</strong><br>
+               Confiance : {{ adversarial_confidence }}%</p>
+        </div>
+    </div>
+
+    <div style="margin-top: 25px;">
+        {% if attack_effective %}
+            <p style="color: #e74c3c; font-weight: bold;">⚠️ L’attaque a été efficace : le modèle a été trompé.</p>
+        {% else %}
+            <p style="color: #2ecc71; font-weight: bold;">✅ L’attaque a échoué : le modèle a bien résisté.</p>
+        {% endif %}
+    </div>
+
+<div style="margin-top: 15px; font-size: 14px; color: #666;">
+  Valeur de perturbation utilisée : <strong>ε = {{ epsilon }}</strong>
+</div>
+
+    <div class="back-menu" style="margin-top: 30px;">
+        <a href="{{ url_for('defense') }}">
+            <button>🛡️ Tester la défense</button>
+        </a>
+        <a href="{{ url_for('adversarial') }}">
+            <button>🔁 Nouvelle attaque</button>
+        </a>
+        <a href="{{ url_for('home') }}">
+            <button>🏠 Retour au menu</button>
+        </a>
+    </div>
+</div>
+
+</body>
+</html>

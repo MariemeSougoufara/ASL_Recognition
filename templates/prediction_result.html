@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Résultat de la prédiction</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='prediction.css') }}">
+</head>
+
+<body>
+  <div class="back-menu">
+    <a href="{{ url_for('home') }}">
+      <button>🏠 Retour au menu</button>
+    </a>
+  </div>
+
+  <div class="result-section">
+    <p class="prediction">
+      Le signe détecté est : <span>{{ prediction }}</span>
+    </p>
+
+    <p class="confidence">
+      Confiance du modèle : <strong>{{ confidence | round(2) }}%</strong>
+    </p>
+
+    <img src="{{ url_for('static', filename='uploads/' + image) }}" alt="Image analysée">
+
+    <div class="action-buttons">
+      <a href="{{ url_for('adversarial') }}">
+        <button class="btn-attack">💥 Générer une attaque</button>
+      </a>
+      <a href="{{ url_for('prediction') }}">
+        <button class="btn-predict">🔍 Prédire une autre image</button>
+      </a>
+    </div>
+  </div>
+</body>
+</html>

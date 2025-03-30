@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Accueil</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <div class="container" id="app">
+    <div class="header">
+        <!-- Logo -->
+        <img src="{{ url_for('static', filename='help.png') }}" alt="Logo" style="width: 80px; margin-bottom: 10px;">
+    </div>
+
+
+        <h2>Bienvenue, {{ user }} !</h2>
+        <p>Choisissez une fonctionnalité :</p>
+
+    <div class="menu">
+        <a href="{{ url_for('prediction') }}">
+            <button>🧠 Prédir une image</button>
+        </a>
+        <a href="{{ url_for('adversarial') }}">
+            <button>⚔️ Générer des attaques</button>
+        </a>
+        <a href="{{ url_for('defense') }}">
+            <button>🛡️ Défense</button>
+        </a>
+    </div>
+
+    <a class="logout-link" href="{{ url_for('logout') }}">🔓 Se déconnecter</a>
+  </div>
+
+</body>
+</html>

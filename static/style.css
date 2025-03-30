@@ -1,0 +1,229 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #f4f6f8;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
+    background: white;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+    width: 350px;
+    text-align: center;
+}
+
+input[type="text"], input[type="password"] {
+    width: 90%;
+    padding: 10px;
+    margin: 8px 0;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+}
+
+button {
+    background-color: #2c97de;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    background-color: #1b6fa8;
+    transform: scale(1.03);
+
+}
+
+a {
+    color: #2c97de;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.flash {
+    color: #fa504f;
+    margin-top: 10px;
+}
+
+.menu {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 25px;
+}
+
+.menu a button {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    border: none;
+    border-radius: 8px;
+    background-color: #2c97de;
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.menu a button:hover {
+    background-color: #1b6fa8;
+    transform: scale(1.03);
+}
+
+.header {
+    margin-bottom: 20px;
+}
+
+.logout-link {
+    margin-top: 30px;
+    display: block;
+    color: #fa504f;
+    text-decoration: none;
+}
+
+.logout-link:hover {
+    text-decoration: underline;
+}
+
+.top-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    background: #eee;
+    padding: 10px 15px;
+    border-radius: 10px;
+}
+
+.top-left {
+    font-weight: bold;
+}
+
+.top-right {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.logout-btn {
+    margin-left: 15px;
+    color: #fa504f;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.logout-btn:hover {
+    text-decoration: underline;
+}
+
+/* ======== PAGE D'ACCUEIL (WELCOME) ======== */
+
+.welcome {
+    text-align: center;
+    padding: 50px 20px;
+    max-width: 700px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+}
+
+.logo-big {
+    width: 100px;
+    margin-bottom: 10px;
+}
+
+.welcome h1 {
+    font-size: 32px;
+    font-weight: bold;
+    color: #222;
+}
+
+.highlight {
+    color: #2c97de;
+}
+
+.subtitle {
+    font-size: 18px;
+    color: #555;
+}
+
+.quote {
+    font-style: italic;
+    color: #333;
+    font-size: 16px;
+    margin: 0;
+    padding: 0 20px;
+}
+
+.slogan {
+    font-size: 18px;
+    margin: 10px 0;
+}
+
+.small-print {
+    font-size: 14px;
+    color: #777;
+    line-height: 1.5;
+    max-width: 500px;
+}
+
+.welcome-buttons {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.welcome-buttons a button {
+    padding: 12px 20px;
+    font-size: 16px;
+    border-radius: 8px;
+    background-color: #2c97de;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.welcome-buttons a button:hover {
+    background-color: #1b6fa8;
+    transform: scale(1.05);
+}
+
+.welcome {
+    text-align: center;
+    padding: 50px 30px;
+    max-width: 800px;
+    width: 100%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+    box-sizing: border-box;
+}
+
+.welcome-buttons a button {
+    padding: 12px 25px;
+    font-size: 16px;
+    border-radius: 8px;
+    background-color: #2c97de;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    min-width: 180px;
+}

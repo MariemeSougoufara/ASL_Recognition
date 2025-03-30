@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Résultat - Modèle Robuste</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='defense.css') }}">
+</head>
+<body>
+ <div class="back-menu" style="margin-bottom: 30px;">
+    <a href="{{ url_for('home') }}">
+      <button>🏠 Retour au menu</button>
+    </a>
+  </div>
+<div class="result-section">
+    <h2>Résultat de la prédiction robuste</h2>
+    <p class="confidencen">
+      Le signe détecté est : <strong>{{ prediction }}</strong>
+    </p>
+
+    <p class="confidence">
+      Confiance du modèle : <strong>{{ confidence | round(2) }}%</strong>
+    </p>
+
+    <img src="{{ url_for('static', filename='uploads/' + image) }}" alt="Image analysée">
+
+    <div class="action-buttons">
+        <a href="{{ url_for('defense') }}">
+            <button class="btn-try-again">🛡️ Vérifier une autre prédiction</button>
+        </a>
+    </div>
+</div>
+</body>
+</html>
